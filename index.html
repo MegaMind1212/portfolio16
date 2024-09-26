@@ -57,7 +57,7 @@
                 <div class="s-header__block">
                     <div class="s-header__logo">
                         <a class="logo" href="index.html">
-                            <img src="title.png" alt="Homepage">
+                            <img style="height: 65px; width: 65px;" src="title.png" alt="Homepage">
                         </a>
                     </div>
 
@@ -276,7 +276,7 @@
             ----------------------------------------------- -->
             <section id="expertise" class="custom-timeline">
                 <p style="padding: 20px;"></p>                <h1>Experience</h1>
-                <p class="centered-paragraph">proficient Data Science and AI/ML developer with hands-on experience across multiple domains. Her professional journey includes developing innovative solutions like AI-powered websites, agricultural advisory systems, and financial bots. She has held leadership roles, managing teams of interns and contributing to the successful execution of marketing campaigns and operational efficiency improvements. Her technical expertise and leadership abilities are complemented by her consistent involvement in research and client management, making her a versatile and resourceful professional.</p>
+                <p class="centered-paragraph">Proficient Data Science and AI/ML developer with hands-on experience across multiple domains. Her professional journey includes developing innovative solutions like AI-powered websites, agricultural advisory systems, and financial bots. She has held leadership roles, managing teams of interns and contributing to the successful execution of marketing campaigns and operational efficiency improvements. Her technical expertise and leadership abilities are complemented by her consistent involvement in research and client management, making her a versatile and resourceful professional.</p>
                 <p style="padding: 20px;"></p>
 
                 <ul>
@@ -770,6 +770,7 @@
                     }
                   </style>
                   
+                  <!--projs-->
                   <section id="clients" class="projects-section">
                     <h2 style="font-size: 70px;" class="projects-title">Projects</h2>
                     <p style="padding: 20px;"></p>
@@ -870,6 +871,7 @@
                         overflow: hidden;
                         transition: transform 0.3s ease, box-shadow 0.3s ease;
                         cursor: pointer;
+                        height: 300px; /* Set fixed height to prevent extension */
                     }
                 
                     .project-card:hover {
@@ -879,15 +881,19 @@
                 
                     .project-card img {
                         width: 100%;
-                        height: 300px;
+                        height: 100%;
                         object-fit: cover;
+                        display: block;
                     }
                 
                     .video-player {
-                        display: none;
+                        position: absolute; /* Position the video absolutely */
+                        top: 0;
+                        left: 0;
                         width: 100%;
-                        height: 300px;
+                        height: 100%;
                         object-fit: cover;
+                        display: none; /* Initially hidden */
                     }
                 
                     .project-info {
@@ -1034,26 +1040,28 @@
                         }
                     }
                 
-                    // Ensure first images are set active when the page loads
-                    document.addEventListener("DOMContentLoaded", function () {
-                        document.querySelectorAll("#imageModal1 .slides img")[0].classList.add("active");
-                        document.querySelectorAll("#imageModal2 .slides img")[0].classList.add("active");
-                    });
-                
-                    // Toggle video visibility
+                    // Toggle video visibility and replace the image
                     function toggleVideo(card) {
+                        const image = card.querySelector('.overlay-image');
                         const video = card.querySelector('.video-player');
-                        video.style.display = (video.style.display === 'none' || video.style.display === '') ? 'block' : 'none';
-                        if (video.style.display === 'block') {
+                
+                        // Toggle between showing the video and the image
+                        if (video.style.display === 'none' || video.style.display === '') {
+                            image.style.display = 'none';
+                            video.style.display = 'block';
                             video.play();
                         } else {
+                            image.style.display = 'block';
+                            video.style.display = 'none';
                             video.pause();
                         }
                     }
                 </script>
                 
                 
-                  
+                
+                
+                  <!--projs-->
                 <section class="new-projects-section">
                     <div class="new-projects-container">
                         <!-- Project 1: Research Paper -->
@@ -1174,41 +1182,69 @@
                 
                 
 
-        <section id="certs" style="background-color: hsla(39, 93%, 95%, 1); padding: 40px; text-align: center;">
+       <!-- <section id="certs" style="background-color: hsla(39, 93%, 95%, 1); padding: 40px; text-align: center;">
             <h2 style="font-family: 'DM Serif Display', serif; font-size: 3rem; margin-bottom: 20px;">Certificates and Achievements</h2>
           
-            <!-- Slidable Images Container -->
+            <!-- Slidable Images Container --
             <div class="slider" style="position: relative; max-width: 95%; margin: auto; overflow: hidden; border-radius: 20px;">
               <div class="slide-track" style="display: flex; transition: transform 0.5s ease;">
           
-                <!-- Image 1 -->
+                
                 <img src="CERTIFICATE/Host at National space day program.jpg" alt="Certificate 1" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
           
-                <!-- Image 2 -->
+                
                 <img src="CERTIFICATE/1.CareerPlus Internship certificate.png" alt="Certificate 2" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
           
-                <!-- Image 3 -->
+                
                 <img src="CERTIFICATE/Shrawani Rayalkar - Data Visualization.png" alt="Certificate 3" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
           
-                <!-- Image 4 -->
+                
                 <img src="CERTIFICATE/Shrawani Rayalkar - Intro to Machine Learning.png" alt="Certificate 4" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
           
-                <!-- Image 5 -->
+                
                 <img src="CERTIFICATE/tata data visualisation forage.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
-          
-                <!-- Image 6 -->
+
+                <img src="CERTIFICATE//VIT Vellore Research Paper Conference-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/SAKSHAM 2.0-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/SIH 2023-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/SAKSHAM 1.0-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/NEXT GEN GDP-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/NEXTGEN FAKE JOB-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/IRJET-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/IOIT MUN 2023-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/I-MUN 2024-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/G20 ELOCUTION-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/Forage On-Premise Sales (Red Bull)-Virtual Experience Program-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/Certificate-A2Z of Stock Market for Beginners-SHRAWANI-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/BSE WEBINAR-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <img src="CERTIFICATE/2.Certificate of Internship Midera-1.png" alt="Certificate 5" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
+
+                <!-- LAST --
                 <img src="CERTIFICATE/Host at National space day program.jpg" alt="Certificate 6" style="width: calc(100% / 3); height: auto; border-radius: 20px; margin: 0 10px;">
           
               </div>
             </div>
           
-            <!-- Slider Arrows -->
+            <!-- Slider Arrows --
             <div style="margin-top: 20px; display: flex; justify-content: center; align-items: center;">
               <span id="prev" style="cursor: pointer; font-size: 2rem; margin-right: 40px;">&#8592;</span>
               <span id="next" style="cursor: pointer; font-size: 2rem; margin-left: 40px;">&#8594;</span>
             </div>
           
-            <!-- Slider JS -->
+            <!-- Slider JS --
             <script>
               const track = document.querySelector('.slide-track');
               let index = 0;
@@ -1224,7 +1260,154 @@
                 track.style.transform = `translateX(-${index * (100 / totalImages)}%)`;
               });
             </script>
+          </section>-->
+
+          <section id="certs" style="background-color: hsla(39, 93%, 95%, 1); padding: 40px; text-align: center;">
+            <h2 style="font-family: 'DM Serif Display', serif; font-size: 3rem; margin-bottom: 20px;">Certificates and Achievements</h2>
+          
+            <!-- Slidable Images Container -->
+            <div class="slider" style="position: relative; max-width: 95%; margin: auto; overflow: hidden; border-radius: 20px;">
+              <div class="slide-track" style="display: flex; transition: transform 0.5s ease;">
+          
+                <!-- Add your certificate images here -->
+                <img src="CERTIFICATE/Host at National space day program.jpg" alt="Certificate 1" class="slide-img">
+                <img src="CERTIFICATE/1.CareerPlus Internship certificate.png" alt="Certificate 2" class="slide-img">
+                <img src="CERTIFICATE/Shrawani Rayalkar - Data Visualization.png" alt="Certificate 3" class="slide-img">
+                <img src="CERTIFICATE/Shrawani Rayalkar - Intro to Machine Learning.png" alt="Certificate 4" class="slide-img">
+                <img src="CERTIFICATE/tata data visualisation forage.png" alt="Certificate 5" class="slide-img">
+                <img src="CERTIFICATE/VIT Vellore Research Paper Conference-1.png" alt="Certificate 6" class="slide-img">
+                <img src="CERTIFICATE/SAKSHAM 2.0-1.png" alt="Certificate 7" class="slide-img">
+                <img src="CERTIFICATE/SIH 2023-1.png" alt="Certificate 8" class="slide-img">
+                <img src="CERTIFICATE/SAKSHAM 1.0-1.png" alt="Certificate 9" class="slide-img">
+                <img src="CERTIFICATE/NEXT GEN GDP-1.png" alt="Certificate 10" class="slide-img">
+                <img src="CERTIFICATE/NEXTGEN FAKE JOB-1.png" alt="Certificate 11" class="slide-img">
+                <img src="CERTIFICATE/IRJET-1.png" alt="Certificate 12" class="slide-img">
+                <img src="CERTIFICATE/IOIT MUN 2023-1.png" alt="Certificate 13" class="slide-img">
+                <img src="CERTIFICATE/I-MUN 2024-1.png" alt="Certificate 14" class="slide-img">
+                <img src="CERTIFICATE/G20 ELOCUTION-1.png" alt="Certificate 15" class="slide-img">
+                <img src="CERTIFICATE/Forage On-Premise Sales (Red Bull)-Virtual Experience Program-1.png" alt="Certificate 16" class="slide-img">
+                <img src="CERTIFICATE/Certificate-A2Z of Stock Market for Beginners-SHRAWANI-1.png" alt="Certificate 17" class="slide-img">
+                <img src="CERTIFICATE/BSE WEBINAR-1.png" alt="Certificate 18" class="slide-img">
+                <img src="CERTIFICATE/2.Certificate of Internship Midera-1.png" alt="Certificate 19" class="slide-img">
+                <!-- Add more images similarly -->
+          
+              </div>
+            </div>
+          
+            <!-- Slider Arrows -->
+            <div style="margin-top: 20px; display: flex; justify-content: center; align-items: center;">
+              <span id="prev" style="cursor: pointer; font-size: 2rem; margin-right: 40px;">&#8592;</span>
+              <span id="next" style="cursor: pointer; font-size: 2rem; margin-left: 40px;">&#8594;</span>
+            </div>
+          
+            <!-- Slider JS with Arrow and Mobile Adjustment -->
+            <script>
+              const track = document.querySelector('.slide-track');
+              const images = track.querySelectorAll('img');
+              let index = 0;
+              let totalImages = images.length;
+              let visibleImages = 3; // Default for desktop
+              const trackWidth = track.clientWidth;
+          
+              // Add spacing between the images
+              images.forEach((img) => {
+                img.style.marginRight = '20px'; // Add space between images
+              });
+          
+              // Function to check the screen size and adjust visible images
+              function adjustVisibleImages() {
+                const screenWidth = window.innerWidth;
+          
+                if (screenWidth <= 768) {
+                  visibleImages = 1; // On mobile, show 1 image at a time
+                } else {
+                  visibleImages = 3; // On desktop, show 3 images at a time
+                }
+          
+                // Adjust image width dynamically
+                images.forEach((img) => {
+                  img.style.width = `calc(100% / ${visibleImages} - 20px)`; // Adjust the width based on visible images minus space
+                });
+                setPositionByIndex();
+              }
+          
+              // Update visible images on window resize
+              window.addEventListener('resize', adjustVisibleImages);
+              adjustVisibleImages(); // Initial adjustment
+          
+              // Slider movement using Next and Previous buttons
+              document.getElementById('next').addEventListener('click', () => {
+                if (index < totalImages - visibleImages) {
+                  index++;
+                  setPositionByIndex();
+                }
+              });
+          
+              document.getElementById('prev').addEventListener('click', () => {
+                if (index > 0) {
+                  index--;
+                  setPositionByIndex();
+                }
+              });
+          
+              function setPositionByIndex() {
+                const imageWidth = track.clientWidth / visibleImages;
+                track.style.transform = `translateX(-${index * imageWidth}px)`;
+              }
+          
+              // Mouse Drag Functionality
+              let isDragging = false;
+              let startPosition = 0;
+              let currentTranslate = 0;
+              let prevTranslate = 0;
+              let animationID;
+          
+              track.addEventListener('mousedown', startDragging);
+              track.addEventListener('mouseup', endDragging);
+              track.addEventListener('mouseleave', endDragging);
+              track.addEventListener('mousemove', drag);
+          
+              function startDragging(e) {
+                isDragging = true;
+                startPosition = e.pageX;
+                animationID = requestAnimationFrame(animation);
+              }
+          
+              function endDragging() {
+                isDragging = false;
+                cancelAnimationFrame(animationID);
+          
+                const movedBy = currentTranslate - prevTranslate;
+                if (movedBy < -100 && index < totalImages - visibleImages) {
+                  index++;
+                }
+                if (movedBy > 100 && index > 0) {
+                  index--;
+                }
+          
+                setPositionByIndex();
+              }
+          
+              function drag(e) {
+                if (isDragging) {
+                  const currentPosition = e.pageX;
+                  currentTranslate = prevTranslate + currentPosition - startPosition;
+                }
+              }
+          
+              function animation() {
+                setSliderPosition();
+                if (isDragging) requestAnimationFrame(animation);
+              }
+          
+              function setSliderPosition() {
+                track.style.transform = `translateX(${currentTranslate}px)`;
+              }
+            </script>
           </section>
+          
+          
+          
           
           
 
